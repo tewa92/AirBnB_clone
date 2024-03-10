@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" State Module for HBNB project """
-from models.base_model import BaseModel
 
+"""Module for HBNB the project """
+from models.base_model import BaseModel
 
 class Amenity(BaseModel):
     name = ""

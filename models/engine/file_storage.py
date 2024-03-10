@@ -1,23 +1,24 @@
 #!/usr/bin/python3
-"""This module defines a class to manage file storage for hbnb clone"""
+
+""" Defines a class to manage file storage for the hbnb clone project"""
 import json
 
 
 class FileStorage:
-    """This class manages storage of hbnb models in JSON format"""
+    """Manages storage of hbnb models in JSON format"""
     __file_path = 'file.json'
     __objects = {}
 
     def all(self):
-        """Returns a dictionary of models currently in storage"""
+        """Return the dictionary __objects."""
         return FileStorage.__objects
 
     def new(self, obj):
-        """Adds new object to storage dictionary"""
+        """Set in __objects the obj with key <obj class name>.id."""
         self.all().update({obj.to_dict()['__class__'] + '.' + obj.id: obj})
 
     def save(self):
-        """Saves storage dictionary to file"""
+        """Serialize __objects to the JSON file (path: __file_path)."""
         with open(FileStorage.__file_path, 'w') as f:
             temp = {}
             temp.update(FileStorage.__objects)
@@ -25,8 +26,8 @@ class FileStorage:
                 temp[key] = val.to_dict()
             json.dump(temp, f)
 
-    def reload(self):
-        """Loads storage dictionary from file"""
+    def reload(self):        
+	"""Deserialize the JSON file to __objects."""
         from models.base_model import BaseModel
         from models.user import User
         from models.place import Place
