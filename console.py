@@ -73,7 +73,7 @@ class HBNBCommand(cmd.Cmd):
                 pline = pline[2].strip()  # pline is now str
                 if pline:
                     # check for *args or **kwargs
-                    if pline[0] is '{' and pline[-1] is'}'\
+                    if pline[0] is '{' and pline[-1] is '}'\
                             and type(eval(pline)) is dict:
                         _args = pline
                     else:
@@ -92,8 +92,8 @@ class HBNBCommand(cmd.Cmd):
             print('(hbnb) ', end='')
         return stop
 
-    def do_quit(self, command):        
-	"""Quit command to exit the program"""
+    def do_quit(self, command):
+        """Quit command to exit the program"""
 
         exit()
 
@@ -114,8 +114,8 @@ class HBNBCommand(cmd.Cmd):
         """Do nothing on an empty line"""
         pass
 
-    def do_create(self, args):        
-	"""Create a new instance of BaseModel"""
+    def do_create(self, args):
+        """Create a new instance of BaseModel"""
         if not args:
             print("** class name missing **")
             return
@@ -233,8 +233,8 @@ class HBNBCommand(cmd.Cmd):
         """ """
         print("Usage: count <class_name>")
 
-    def do_update(self, args):        
-	"""Updates an instance based on the class name and id"""
+    def do_update(self, args):
+        """Updates an instance based on the class name and id"""
 
         c_name = c_id = att_name = att_val = kwargs = ''
 
@@ -321,6 +321,7 @@ class HBNBCommand(cmd.Cmd):
         """ Help information for the update class """
         print("Updates an object with new information")
         print("Usage: update <className> <id> <attName> <attVal>\n")
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()

@@ -7,8 +7,8 @@ from datetime import datetime
 class BaseModel:
     """Base class for other classes in the project."""
 
-    def __init__(self, *args, **kwargs):        
-	"""Initialize a new Base instance."""
+    def __init__(self, *args, **kwar):
+        """Initialize a new Base instance."""
 
         if not kwargs:
             from models import storage
@@ -29,8 +29,11 @@ class BaseModel:
         cls = (str(type(self)).split('.')[-1]).split('\'')[0]
         return '[{}] ({}) {}'.format(cls, self.id, self.__dict__)
 
-    def save(self):        
-	"""Updated the public instance attribute updated_at with the current datetime"""
+    def save(self):
+        """
+        Updated the public instance attribute updated_at with the
+        current datetime
+        """
         from models import storage
         self.updated_at = datetime.now()
         storage.save()

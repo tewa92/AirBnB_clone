@@ -26,8 +26,8 @@ class FileStorage:
                 temp[key] = val.to_dict()
             json.dump(temp, f)
 
-    def reload(self):        
-	"""Deserialize the JSON file to __objects."""
+    def reload(self):
+        """Deserialize the JSON file to __objects."""
         from models.base_model import BaseModel
         from models.user import User
         from models.place import Place
@@ -46,6 +46,6 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r') as f:
                 temp = json.load(f)
                 for key, val in temp.items():
-                        self.all()[key] = classes[val['__class__']](**val)
+                    self.all()[key] = classes[val['__class__']](**val)
         except FileNotFoundError:
             pass
