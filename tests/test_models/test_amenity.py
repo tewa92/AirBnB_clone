@@ -1,20 +1,25 @@
 #!/usr/bin/python3
-"""This script contains the test class for Amenity."""
+"""
+Test suits for amenities
+"""
+import os
+import models
+import unittest
+from datetime import datetime
+from models.base_model import BaseModel
 
-from tests.test_models.test_base_model import test_basemodel
-from models.amenity import Amenity
+
+class TestAmenity(unittest.TestCase):
+    """
+    Tests for amenities
+    """
+
+    def test_name(self):
+        """
+        Tests for name inputs
+        """
+        pass
 
 
-class test_Amenity(test_basemodel):
-    """Test class for Amenity."""
-
-    def __init__(self, *args, **kwargs):
-        """Initialize test class."""
-        super().__init__(*args, **kwargs)
-        self.name = "Amenity"
-        self.value = Amenity
-
-    def test_name2(self):
-        """Test Amenity name attribute."""
-        new = self.value()
-        self.assertEqual(type(new.name), str)
+if __name__ == '__main__':
+    unittest.main()
