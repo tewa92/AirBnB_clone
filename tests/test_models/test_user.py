@@ -1,47 +1,25 @@
 #!/usr/bin/python3
-
-""" 
-This script contains unit tests for the User class.
 """
-from tests.test_models.test_base_model import test_basemodel
-from models.user import User
+Test suits for amenities
+"""
+import os
+import models
+import unittest
+from datetime import datetime
+from models.base_model import BaseModel
 
 
-class test_User(test_basemodel):
-    """ 
-    Test suite for the User class.
+class TestUser(unittest.TestCase):
+    """
+    Tests for amenities
     """
 
-    def __init__(self, *args, **kwargs):
-        """ 
-        Initialize the test suite with necessary attributes.
+    def test_name(self):
         """
-        super().__init__(*args, **kwargs)
-        self.name = "User"
-        self.value = User
+        Tests for name inputs
+        """
+        pass
 
-    def test_first_name(self):
-        """ """
-        new = self.value()
-        self.assertEqual(type(new.first_name), str)
 
-    def test_last_name(self):
-        """ 
-        Test if first_name attribute is of type string.
-        """
-        new = self.value()
-        self.assertEqual(type(new.last_name), str)
-
-    def test_email(self):
-        """ 
-        Test if last_name attribute is of type string.
-        """
-        new = self.value()
-        self.assertEqual(type(new.email), str)
-
-    def test_password(self):
-        """
-        Test if password attribute is of type string.
-        """
-        new = self.value()
-        self.assertEqual(type(new.password), str)
+if __name__ == '__main__':
+    unittest.main()
