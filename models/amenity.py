@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Module for HBNB the project """
+"""Module for Amenity class in HBNB the project """
 from models.base_model import BaseModel
 
 
